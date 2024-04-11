@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3066</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2910</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>crm_create_list_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -136,7 +136,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="crm_create_list" sap:VirtualizedContainerService.HintSize="937,3001" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="crm_create_list" sap:VirtualizedContainerService.HintSize="937,2845" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFileDownload" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtaData" />
@@ -251,22 +251,22 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:RetryScope DisplayName="rs_create_new_user" sap:VirtualizedContainerService.HintSize="875,2486" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:01:00">
+    <ui:RetryScope DisplayName="rs_create_new_user" sap:VirtualizedContainerService.HintSize="875,2330" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:01:00">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="process_rs_create_new_user" sap:VirtualizedContainerService.HintSize="833,2271" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <Sequence DisplayName="process_rs_create_new_user" sap:VirtualizedContainerService.HintSize="833,2115" sap2010:WorkflowViewState.IdRef="Sequence_41">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" Filename="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" SpreadsheetName="{x:Null}" Timeout="{x:Null}" Account="mr.cuong1402@gmail.com" Action="UseExisting" Connector="uipath-google-sheets" DisplayName="use_google_spreadsheet" sap:VirtualizedContainerService.HintSize="771,2186" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_1" Mode="EnterId" SpreadsheetId="[strGsheetUrl]" UseConnectionService="False" UserEmail="mr.cuong1402@gmail.com">
+            <ugas:GoogleSheetsApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FileId="{x:Null}" Filename="{x:Null}" ParentFolderId="{x:Null}" ParentFolderPath="{x:Null}" SpreadsheetName="{x:Null}" Timeout="{x:Null}" Account="mr.cuong1402@gmail.com" Action="UseExisting" Connector="uipath-google-sheets" DisplayName="use_google_spreadsheet" sap:VirtualizedContainerService.HintSize="771,2030" sap2010:WorkflowViewState.IdRef="GoogleSheetsApplicationScope_1" Mode="EnterId" SpreadsheetId="[strGsheetUrl]" UseConnectionService="False" UserEmail="mr.cuong1402@gmail.com">
               <ugas:GoogleSheetsApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ugas:IGoogleSheetTarget">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ugas:IGoogleSheetTarget" Name="Spreadsheet" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="process_use_google_spreadsheet" sap:VirtualizedContainerService.HintSize="737,1879" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <Sequence DisplayName="process_use_google_spreadsheet" sap:VirtualizedContainerService.HintSize="737,1723" sap2010:WorkflowViewState.IdRef="Sequence_26">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -294,13 +294,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="fe user" sap:VirtualizedContainerService.HintSize="675,1420" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrUser]">
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="fe user" sap:VirtualizedContainerService.HintSize="675,1264" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrUser]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="process" sap:VirtualizedContainerService.HintSize="641,1233" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <Sequence DisplayName="process" sap:VirtualizedContainerService.HintSize="641,1077" sap2010:WorkflowViewState.IdRef="Sequence_27">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="dtaUserInfor" />
                               <Variable x:TypeArguments="x:String" Name="strAccountName" />
@@ -312,12 +312,12 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <TryCatch DisplayName="tc create user" sap:VirtualizedContainerService.HintSize="579,1148" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                            <TryCatch DisplayName="tc create user" sap:VirtualizedContainerService.HintSize="579,992" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                               <TryCatch.Variables>
                                 <Variable x:TypeArguments="x:String" Name="strResult" />
                               </TryCatch.Variables>
                               <TryCatch.Try>
-                                <Sequence DisplayName="process" sap:VirtualizedContainerService.HintSize="541,875" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                <Sequence DisplayName="process" sap:VirtualizedContainerService.HintSize="541,719" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -391,26 +391,6 @@
                                       </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:MultipleAssign DisplayName="assign" sap:VirtualizedContainerService.HintSize="479,156" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
-                                    <ui:MultipleAssign.AssignOperations>
-                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                                          <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[strResult]</OutArgument>
-                                          </ui:AssignOperation.To>
-                                          <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">TRUE</InArgument>
-                                          </ui:AssignOperation.Value>
-                                        </ui:AssignOperation>
-                                      </scg:List>
-                                    </ui:MultipleAssign.AssignOperations>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:MultipleAssign>
                                   <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                                     <ui:CommentOut.Body>
                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="670,1890" sap2010:WorkflowViewState.IdRef="Sequence_36">
@@ -695,7 +675,7 @@
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                     </ActivityAction.Argument>
-                                    <Assign DisplayName="assign_outcome" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                    <Assign DisplayName="assign_outcome" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[strResult]</OutArgument>
                                       </Assign.To>
@@ -722,7 +702,7 @@
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                                     </ActivityAction.Argument>
-                                    <Assign DisplayName="assign_outcome" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                    <Assign DisplayName="assign_outcome" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[strResult]</OutArgument>
                                       </Assign.To>
