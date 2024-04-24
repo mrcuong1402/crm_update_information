@@ -1,0 +1,331 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="cmr_rename" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="_dicConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="_elementContactName" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="_strAccountName" Type="InArgument(x:String)" />
+    <x:Property Name="_strResult" Type="OutArgument(x:String)" />
+    <x:Property Name="_strEmail" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1217,2059</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>cmr_rename_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="cmr_rename" sap:VirtualizedContainerService.HintSize="688,1994" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[IsNothing(_dicConfig)]" DisplayName="test" sap:VirtualizedContainerService.HintSize="626,1906" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_read_config.xaml" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="wfl\read_config.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="_dicConfig">
+                <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="_dicConfig" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,1524" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Contacts" sap:VirtualizedContainerService.HintSize="530,1439" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1199" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click contact name" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="[_elementContactName]" KeyModifiers="None" MouseButton="Left" Version="V3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Delay DisplayName="delay 2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Delay_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Delay>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click general" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Timeout="5" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bluecom.vn/crm/contact/details/138392/?IFRAME=Y&amp;IFRAME_TYPE=SIDE_SLIDER" CvTextArea="425, 189, 51, 13" CvTextArgument="General" CvType="Text" DesignTimeRectangle="425, 189, 51, 13" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl name='iframe_2nhnvreojt' tag='IFRAME' /&gt;&lt;webctrl class='main-buttons-item-text-box' parentid='crm_scope_detail_c_contact__main' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_2nhnvreojt' tag='IFRAME' /&gt;&lt;webctrl class='main-buttons-item-text-box' parentid='crm_scope_detail_c_contact__main' tag='SPAN' type='' aaname='General' check:text='General' /&gt;" Guid="595fcade-44bd-4609-91a2-eb8eaefe54c2" ImageBase64="" InformativeScreenshot="862162519c61780d5f77e18a7df1490e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Undefined' /&gt;" SearchSteps="Selector, CV" Version="V3" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click edit" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bluecom.vn/crm/contact/details/138392/?IFRAME=Y&amp;IFRAME_TYPE=SIDE_SLIDER" CvTextArea="872, 251, 25, 13" CvTextArgument="edit" CvType="Text" DesignTimeRectangle="873, 251, 23, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl class='ui-entity-editor-header-edit-lnk' parentname='contact_*_details_editor_form' aaname='Edit' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl class='ui-entity-editor-header-edit-lnk' parentname='contact_*_details_editor_form' aaname='Edit' tag='SPAN' type='' check:text='Edit' /&gt;" Guid="0494cd6c-8737-48e0-b788-43a689de2ce8" ImageBase64="" InformativeScreenshot="f5c148e3d5e02f2f3e618ed779a3b1cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Undefined' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="282, 250, 120, 16" CvTextArgument="THONG TIN VE LIEN HE" CvType="Text" DesignTimeRectangle="284, 251, 118, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl aaname='Thông tin về liên hệ' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl aaname='Thông tin về liên hệ' tag='SPAN' type='' class='ui-entity-editor-header-title-text' check:text='Thông tin về liên hệ' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Delay DisplayName="delay 1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Delay_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Delay>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="type account name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Text="[_strAccountName]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bluecom.vn/crm/contact/details/138392/?IFRAME=Y&amp;IFRAME_TYPE=SIDE_SLIDER" DesignTimeRectangle="284, 316, 596, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl id='name_text' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl id='name_text' tag='INPUT' type='text' class='ui-ctl-element' aaname='Name*' /&gt;" Guid="dfd40295-49c9-4060-a906-78c334a766a0" InformativeScreenshot="c61f6c7c4211c7cc45556de23ac1add3.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Undefined' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="Complete">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="284, 297, 37, 14" ElementType="Text" FullSelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl tag='LABEL' aaname='Name' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl tag='LABEL' aaname='Name' type='' class='ui-entity-editor-block-title-text' check:text='Name*' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <If Condition="[_strEmail.Trim &lt;&gt;  &quot;&quot;]" DisplayName="check email not null" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="type email name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,75" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Text="[_strEmail]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://crm.bluecom.vn/crm/contact/details/113/?IFRAME=Y&amp;IFRAME_TYPE=SIDE_SLIDER" CvElementArea="282, 484, 355, 42" CvType="InputBox" DesignTimeRectangle="284, 486, 352, 39" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='iframe_jzzcwzhdpr' tag='IFRAME' /&gt;&lt;webctrl name='EMAIL[393][VALUE]' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframe_jzzcwzhdpr' tag='IFRAME' /&gt;&lt;webctrl name='EMAIL[393][VALUE]' tag='INPUT' type='text' class='crm-entity-widget-content-input' aaname='' /&gt;" Guid="1ace30b7-72f5-4767-ab44-9b0192dc1416" InformativeScreenshot="a2f700c073bc9b00921326e23c2a433b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xuân Thanh' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CvTextArea="283, 468, 34, 12" CvTextArgument="E-mail" CvType="Text" DesignTimeRectangle="284, 467, 33, 14" ElementType="Text" FullSelectorArgument="&lt;webctrl id='iframe_jzzcwzhdpr' tag='IFRAME' /&gt;&lt;webctrl aaname='E-mail' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframe_jzzcwzhdpr' tag='IFRAME' /&gt;&lt;webctrl aaname='E-mail' tag='LABEL' type='' class='ui-entity-editor-block-title-text' check:innerText='E-mail' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click save" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8d0424eb-883b-4f78-af5a-8c7fb3f43f43" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://crm.bluecom.vn/crm/contact/details/138392/?IFRAME=Y&amp;IFRAME_TYPE=SIDE_SLIDER" DesignTimeRectangle="974, 990, 70, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl aaname='[Ctrl+Enter]' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='iframe_o9wfhmzquy' tag='IFRAME' /&gt;&lt;webctrl aaname='[Ctrl+Enter]' tag='BUTTON' type='' class='ui-btn ui-btn-success' check:innerText='SAVE' /&gt;" Guid="2dfcbcba-c933-45f5-80de-3b3f7b4fa842" ImageBase64="" InformativeScreenshot="f2a157caf6f59c69b357b401317750dc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Undefined' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Delay DisplayName="delay 1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Delay_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Delay>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[_strResult]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["TRUE: rename user"]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <ui:LogMessage DisplayName="log rename" sap:VirtualizedContainerService.HintSize="434,77" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Rename Undefined to &quot; + _strAccountName]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG/SURBVDhPY/j//z8jJZhyAxTqtjEDcSIQHwTi/0D8E4j3ArEtNg1A8blAfBDGZ1Cq3dqtULPlPzpWrN3yHUiromiu2VIJklOt3/YdbkDPruv5MXOPnd5748VMoEDzkTuvp2rUATVXbvxv2LK9Ga65cqOrYtXGvyBxtdrNCAOAhCwQewOxOFRQVLd203uF0rX/Q6YemAgSA7IVlcrWvTdu3PJWpWL9b8WytX+halEDUaFwFTMQTwbi/+qla38eu/3SHcjmVC5efVmtdM33vVeftYJokDxMD9wAhbxlwor5y/YD6f/qxSt/rj99fzpQnFO5YPlCoPjf6buvLgTyRdWKVnwHqYHpAxugmLVYWil78V0g/V+naMXnzWceTAWKywL5mSAxPLidQTF9PrtK5sLzQPq/aemK12fvvmoHapYGGaydt+QuSBwX9mnZuJxBNW1eqmLynP8qqXP/Hrv+tBGokR+kGYqzgRgUE3AMUgvCUL4rg07m/IuKibP+48BLgYpghoExTA7GZ1BJmvVbMX7Gf2zYuXzFYZhCGFZOmPlfJXEmSjTWAjGKM5FwKBCjGADEIG/Ww/go6YAcTKEB/xkBaWymGBfU+jMAAAAASUVORK5CYII=" InformativeScreenshot="9fd27a031ba00a274a9cb3d499a5f83b.jpg" Selector="&lt;html app='chrome.exe' url='*' /&gt;" Title="Contacts" Url="*" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
